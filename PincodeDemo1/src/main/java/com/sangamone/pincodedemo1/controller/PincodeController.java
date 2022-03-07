@@ -13,7 +13,7 @@ public class PincodeController {
 	@Autowired
 	PincodeDao pincodeDao;
 	
-	@RequestMapping("/")
+	@RequestMapping("/pincodes")
 	public String getPincode(Model model) {
 		model.addAttribute("pincode", pincodeDao.findAll());
 		return "pincode";
