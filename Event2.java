@@ -1,0 +1,125 @@
+package JavaProgramming;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Event2 {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		String str1="<!DOCTYPE html>\r\n"
+				+ "<html>\r\n"
+				+ "<head>\r\n"
+				+ "<title>CountDown1</title>\r\n"
+				+ "<style>\r\n"
+				+ ".abc{\r\n"
+				+ "    text-align: center;\r\n"
+				+ "    font-size: large;\r\n"
+				+ "    font-family: 'Courier New', Courier, monospace;\r\n"
+				+ "    font-style: italic;\r\n"
+				+ "    display: flex;\r\n"
+				+ "    justify-content: center;\r\n"
+				+ "    font-weight: bold;\r\n"
+				+ "}\r\n"
+				+ "input[type=text]{\r\n"
+				+ "    margin: 10px;\r\n"
+				+ "    outline: none;\r\n"
+				+ "    border: none;\r\n"
+				+ "    font-size: 15px;\r\n"
+				+ "    font-weight: bold;\r\n"
+				+ "    text-align: center;\r\n"
+				+ "    border-radius: 10px;\r\n"
+				+ "    color: black;\r\n"
+				+ "    width: 20%;\r\n"
+				+ "    height: 50px;\r\n"
+				+ "    background-color: rgb(216, 216, 216);\r\n"
+				+ "}\r\n"
+				+ "input[type=date]{\r\n"
+				+ "    color: black;\r\n"
+				+ "    width: 20%;\r\n"
+				+ "    height: 50px;\r\n"
+				+ "    background-color: rgb(206, 206, 206);\r\n"
+				+ "    outline: none;\r\n"
+				+ "    border: none;\r\n"
+				+ "    font-size: 15px;\r\n"
+				+ "    font-weight: bold;\r\n"
+				+ "    text-align: center;\r\n"
+				+ "    border-radius: 10px;\r\n"
+				+ "}\r\n"
+				+ "button{\r\n"
+				+ "    margin: 10px;\r\n"
+				+ "    width: 15%;\r\n"
+				+ "    padding: 5px;\r\n"
+				+ "    background-color: rgb(202, 54, 54);\r\n"
+				+ "    border: none;\r\n"
+				+ "    border-radius: 10px;\r\n"
+				+ "}\r\n"
+				+ "#b{\r\n"
+				+ "    font-family: 'Courier New', Courier, monospace;\r\n"
+				+ "    font-weight: bold;\r\n"
+				+ "}\r\n"
+				+ ".t{\r\n"
+				+ "    margin: 50px;\r\n"
+				+ "    color: brown;\r\n"
+				+ "    font-size: 25px;\r\n"
+				+ "    font-weight: bold;\r\n"
+				+ "}\r\n"
+				+ ".t1{\r\n"
+				+ "    font-size: 20px;\r\n"
+				+ "    font-weight: bold;\r\n"
+				+ "    color: royalblue;\r\n"
+				+ "}\r\n"
+				+ "</style>\r\n"
+				+ "</head>\r\n"
+				+ "<body onload=\"callme()\">\r\n"
+				+ "    <form name=\"form1\">\r\n"
+				+ "        <div class=\"abc\">\r\n"
+				+ "        <table id=\"dis\">\r\n"
+				+ "            <tr>\r\n"
+				+ "                <td colspan=\"4\" class=\"t\" id=\"msg\">EVENT</td>\r\n"
+				+ "            </tr>\r\n"
+				+ "            <tr>\r\n"
+				+ "                <td colspan=\"4\" class=\"t1\" id=\"msg2\">Remaining Days For Your Event</td>\r\n"
+				+ "            </tr>\r\n"
+				+ "            <tr>\r\n"
+				+ "            </tr>\r\n"
+				+ "            <tr>\r\n"
+				+ "            <td id=\"days\"></td>\r\n"
+				+ "            </tr>\r\n"
+				+ "            </table>\r\n"
+				+ "        </div>\r\n"
+				+ "    </form>\r\n"
+				+ "<script>\r\n"
+				+ "    function countdown()\r\n"
+				+ "    {\r\n"
+				+ "        const v1=new Date(";
+		String str2="\"May 28, 2022 00:00:00\"";
+		String str3=").getTime();\r\n"
+				+ "\r\n"
+				+ "        var today=new Date().getTime();\r\n"
+				+ "\r\n"
+				+ "        var diff = v1-today;\r\n"
+				+ "\r\n"
+				+ "        var d = Math.floor(diff/(1000*60*60*24));\r\n"
+				+ "        console.log(d);\r\n"
+				+ "\r\n"
+				+ "        document.getElementById(\"days\").innerText=d+\" days\";\r\n"
+				+ "    }\r\n"
+				+ "function callme(){\r\n"
+				+ "    document.body.style.background=\"rgba(255, 255, 0, 0.5)\";\r\n"
+				+ "	setInterval(countdown,1000);}\r\n"
+				+ "</script>\r\n"
+				+ "</body>\r\n"
+				+ "</html>";
+		
+		BufferedWriter bw1 = new BufferedWriter(new FileWriter("D:\\SangamOne\\java\\countdown.html"));
+	    bw1.write(str1);
+	    bw1.write(str2);
+	    bw1.write(str3);
+	    bw1.close();
+	    System.out.println(str1+str2);
+	    bw1.close();
+	}
+
+}
